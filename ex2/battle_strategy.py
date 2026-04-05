@@ -1,15 +1,15 @@
 from abc import ABC, abstractmethod
-
 from ex0.creature import Creature
 
 
-class CreatureFactory(ABC):
+class BattleStrategy(ABC):
+
     @abstractmethod
-    def create_base(self) -> Creature:
+    def act(self, creature: Creature) -> None:
         pass
 
     @abstractmethod
-    def create_evolved(self) -> Creature:
+    def is_valid(self, creature: Creature) -> bool:
         pass
 
     def __repr__(self) -> str:
