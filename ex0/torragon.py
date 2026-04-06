@@ -1,4 +1,4 @@
-from ex0.creature import Creature
+from ex0 import Creature
 
 
 class Torragon(Creature):

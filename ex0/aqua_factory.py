@@ -1,6 +1,6 @@
+from ex0 import Creature
+from ex0 import CreatureFactory
 from ex0.aquabub import Aquabub
-from ex0.creature import Creature
-from ex0.creature_factory import CreatureFactory
 from ex0.torragon import Torragon
 
 
