@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python3.10
 
 from typing import List
 from ex0.aqua_factory import AquaFactory

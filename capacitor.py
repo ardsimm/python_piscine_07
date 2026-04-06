@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python3.10
 
 
 from ex1 import HealingCreatureFactory, TransformCreatureFactory

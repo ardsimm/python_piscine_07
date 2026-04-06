@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python3.10
 
 from typing import Dict, List, Tuple, TypedDict
 from ex0.aqua_factory import AquaFactory
@@ -34,10 +34,10 @@ def update_op_met(
 
 
 def battle(oponents: List[Oponent]) -> None:
-    op_met: dict[Oponent, List[Oponent]] = dict(
-        (op, [])
+    op_met: dict[Oponent, List[Oponent]] = {
+        op: []
         for op in oponents
-    )
+    }
 
     for op1 in oponents:
         factory1 = op1[0]
