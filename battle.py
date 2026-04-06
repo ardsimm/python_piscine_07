@@ -28,8 +28,10 @@ def test_battle(factories: List[CreatureFactory]) -> None:
     for creature in creatures:
         print(creature.describe())
         if i < creature_len - 1:
-            print(" vs")
+            print(" vs.")
         i += 1
+
+    print(" fight!")
 
     for creature in creatures:
         print(creature.attack())
