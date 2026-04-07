@@ -1,25 +1,22 @@
-from typing import Union
-
-from ex0.creature import Creature
-from ex1.transform_capability import TransformCapability
+from ex1.transform_capable_creature import TransformCapableCreature
 from ex2.battle_strategy import BattleStrategy
+from ex2.invalid_strategy_exception import InvalidStrategyException
 
 
 class AgressiveStrategy(BattleStrategy):
 
-    def is_valid(self, creature: Union[Creature, TransformCapability]) -> bool:
+    def is_valid(self, creature: TransformCapableCreature) -> bool:
         return (
             hasattr(creature, "transform")
             and hasattr(creature, "revert")
             and hasattr(creature, "attack")
         )
 
-    def act(self, creature: Union[Creature, TransformCapability]) -> None:
+    def act(self, creature: TransformCapableCreature) -> None:
         if not self.is_valid(creature):
-            raise ValueError(
-                f"Invalid creature {creature.name}" +  # type: ignore
-                " for this agressive strategy"
+            raise InvalidStrategyException(
+                creature.name, "agressive"
             )
-        print(creature.transform())  # type: ignore
-        print(creature.attack())  # type: ignore
-        print(creature.revert())  # type: ignore
+        print(creature.transform())
+        print(creature.attack())
+        print(creature.revert())

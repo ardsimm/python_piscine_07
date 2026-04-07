@@ -1,5 +1,6 @@
 from ex0.creature import Creature
 from ex2.battle_strategy import BattleStrategy
+from ex2.invalid_strategy_exception import InvalidStrategyException
 
 
 class NormalStrategy(BattleStrategy):
@@ -9,8 +10,7 @@ class NormalStrategy(BattleStrategy):
 
     def act(self, creature: Creature) -> None:
         if not self.is_valid(creature):
-            raise ValueError(
-                f"Invalid creature {creature.name}" +
-                " for this normal strategy"
+            raise InvalidStrategyException(
+                creature.name, "normal"
             )
         print(creature.attack())

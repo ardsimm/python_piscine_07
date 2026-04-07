@@ -9,6 +9,7 @@ from ex1.transform_creature_factory import TransformCreatureFactory
 from ex2.agressive_strategy import AgressiveStrategy
 from ex2.battle_strategy import BattleStrategy
 from ex2.defensive_strategy import DefensiveStrategy
+from ex2.invalid_strategy_exception import InvalidStrategyException
 from ex2.normal_strategy import NormalStrategy
 
 Oponent = Tuple[CreatureFactory, BattleStrategy]
@@ -65,7 +66,7 @@ def battle(oponents: List[Oponent]) -> None:
             try:
                 strategy1.act(creature1)
                 strategy2.act(creature2)
-            except ValueError as err:
+            except InvalidStrategyException as err:
                 print("Battle error, aborting tournament:", err)
                 break
 
